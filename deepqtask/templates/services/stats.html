@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-10">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'services' %}">Services</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Reports</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="col-md-2">
+            <a href="{% url 'services' %}" class="btn btn-primary">Back</a>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <h3>Doughnut Chart</h3>
+            <div style="height: 300px; position: relative;">
+                <canvas id="doughnutChart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h3>Bar Chart</h3>
+            <div style="height: 300px; position: relative;">
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h3>Pie Chart</h3>
+            <div style="height: 300px; position: relative;">
+                <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/stats.js' %}"></script>
+
+{% endblock content %}

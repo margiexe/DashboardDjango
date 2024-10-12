@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>SPI Index Line Graph</h1>
+
+    <!-- Debug information -->
+    <!-- <div id="debug-info" style="background-color: #f0f0f0; padding: 10px; margin-bottom: 20px; height: 400;" >
+        <h3>Debug Information:</h3>
+        <p>Graph HTML length: {{ graph_html|length }}</p>
+    </div> -->
+
+    <div id="plotly-graph" style="height: 800;">
+        {{ graph_html|safe }}
+    </div>
+
+    
+{% endblock content %}

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-10">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'services' %}">Services</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Edit Services</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="col-md-2">
+            <a href="{% url 'service-delete' service.id %}" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Add a New Service</h4>
+        </div>
+        <div class="card-body">
+            <form action="{% url 'edit-service' service.id %}" method="post">
+                <p>Form Action: {% url 'edit-service' service.id %}</p>
+
+                {% include 'partials/_messages.html' %}
+                {% csrf_token %}
+                <div class="row">
+                    <!-- Cost Input -->
+                    <div class="col-md-6 mb-3">
+                        <label for="cost" class="form-label">Cost</label>
+                        <input type="text" class="form-control" id="cost" name="cost" value="{{values.cost}}" placeholder="Enter service cost">
+                    </div>
+
+                    <!-- Description Input -->
+                    <div class="col-md-6 mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="description" name="description" value="{{values.description}}" placeholder="Enter service description">
+                    </div>
+                </div>
+
+                <div class="row">
+                
+
+                <!-- Category Dropdown -->
+                <div class="col-md-6 mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <select name="category" id="category" class="form-select">
+                        <option value="" disabled {% if not values.category %}selected{% endif %}>Select a category</option>
+                        {% for category in categories %}
+                            <option value="{{ category.id }}" {% if category.id|stringformat:"s" == values.category|stringformat:"s" %}selected{% endif %}>{{ category.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+
+                    <!-- Deadline Input -->
+                    <div class="col-md-6 mb-3">
+                        <label for="date" class="form-label">Deadline</label>
+                        <input type="date" class="form-control" id="date" name="date">
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid gap-2">
+                    <button type="submit" value="Save" class="btn btn-primary btn-lg">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
