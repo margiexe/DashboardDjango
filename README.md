@@ -26,5 +26,6 @@ Tech Stack Used
 Frontend: HTML, CSS, JavaScript
 Backend: Django
 For Plots: Chart.js and Plotly
+
 Design Choices/Help From
 Bootstrap, YouTube, ChatGPT
