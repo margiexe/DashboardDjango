@@ -14,12 +14,11 @@ Only logged-in users can access the dashboard page (the @login_required decorato
 How to Run the Project
 Virtual Environment (optional): Create a virtual environment and activate it outside the project directory. Download the requirements specified in requirements.txt using the command:
 
-bash
-Copy code
+command to install all necessary packages : 
 pip install -r requirements.txt
 Run the following command in the project directory (i.e., deepqtask/):
 
-run command : 
+command to run project : 
 python manage.py runserver
 The project should run successfully on the localhost.
 
