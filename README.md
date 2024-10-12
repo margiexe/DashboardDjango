@@ -19,8 +19,7 @@ Copy code
 pip install -r requirements.txt
 Run the following command in the project directory (i.e., deepqtask/):
 
-bash
-Copy code
+run command : 
 python manage.py runserver
 The project should run successfully on the localhost.
 
