@@ -15,11 +15,11 @@ How to Run the Project
 Virtual Environment (optional): Create a virtual environment and activate it outside the project directory. Download the requirements specified in requirements.txt using the command:
 
 command to install all necessary packages : 
-pip install -r requirements.txt
+"pip install -r requirements.txt"
 Run the following command in the project directory (i.e., deepqtask/):
 
 command to run project : 
-python manage.py runserver
+"python manage.py runserver"
 The project should run successfully on the localhost.
 
 Tech Stack Used
