@@ -1,31 +1,32 @@
-# DashboardDjango
-Develop an interactive dashboard in Django that features a pie chart, doughnut chart, and bar graph. The dashboard will read data from a CSV file and generate a line graph based on this data. Users will have the ability to modify the data, and the graphs will update accordingly to reflect these changes.
+Develop an interactive dashboard in Django that features a pie chart, doughnut chart, and bar graph. The dashboard will read data from a CSV file (downloaded from: https://data.worldbank.org/) and generate a line graph based on this data. Users will have the ability to modify the data, and the graphs will update accordingly to reflect these changes.
 
-Interactive Graphs :
-one line graph which reads a csv file (downloaded from : https://data.worldbank.org/ ) which you can see on clicking file data in the sidebar.
-doughnut chart, bar chart and pie chart are in Reports section of sidebar.
-all the services are in products (user can perform all crud operations and this would be reflected in the plots of Report section.
-CSV file is stored in media folder of project directory
+Interactive Graphs
+One line graph reads a CSV file (downloaded from: https://data.worldbank.org/) which you can access by clicking "File Data" in the sidebar.
+The doughnut chart, bar chart, and pie chart are located in the "Reports" section of the sidebar.
+All services are in "Products," where users can perform CRUD operations, and these changes will be reflected in the plots of the "Reports" section.
+The CSV file is stored in the media folder of the project directory.
+APIs
+The urls.py file of the app contains the API calls. API fetching is done through the Fetch API of JavaScript.
 
-APIs :
-urls.py file of apps contains the API calls.
-API fetching is done through fetch library of JS
+Authentication
+Only logged-in users can access the dashboard page (the @login_required decorator is used). Users can also register to create new accounts. The sign-out button in the sidebar allows users to log out.
 
-Authentication :
-only logged in users can access the dashboard page (@login_required decorator is used).
-users can register (make new accounts too).
-signout button in the sidebar allows user to log out.
+How to Run the Project
+Virtual Environment (optional): Create a virtual environment and activate it outside the project directory. Download the requirements specified in requirements.txt using the command:
 
-How to run the project?
-Virtual environment (optional)
-create a virtual environment and activate it outside the project directory and download the requirements specified in requirements.txt "pip install -r requirements.txt"
-then run in the project directory (i.e deepqtask/) run "python manage.py runserver"
-project should run successfully on the local host
+bash
+Copy code
+pip install -r requirements.txt
+Run the following command in the project directory (i.e., deepqtask/):
 
-Tech stack used :
-Frontend : HTML CSS JS 
-Backend : Django
-for plots : chart.js and plotly
+bash
+Copy code
+python manage.py runserver
+The project should run successfully on the localhost.
 
-Design choices/help from : 
-Booststrap, youtube, chatgpt
+Tech Stack Used
+Frontend: HTML, CSS, JavaScript
+Backend: Django
+For Plots: Chart.js and Plotly
+Design Choices/Help From
+Bootstrap, YouTube, ChatGPT
